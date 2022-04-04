@@ -31,12 +31,12 @@ public class IndexController implements Serializable{
     }
     
     public String verificarUsuario(){
-        
         if(usuarioEJB.verificarUsuario(usuario) == null){
             return "permiossinsuficientes.xhtml";
         }else{
             return "privado/inicio.xhtml";
         }
+        
     }
 
     public Usuario getUsuario() {
@@ -45,6 +45,6 @@ public class IndexController implements Serializable{
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
+    }    
     
 }

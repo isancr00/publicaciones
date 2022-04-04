@@ -15,8 +15,8 @@
                 <p:outputLabel value="Password"/>
                 <p:password value="#{indexController.usuario.password}"/>                                 
             </p:panelGrid>
-            <p:commandButton value="Acceder" actionListener="#{indexController.verificarUsuario()}" action="#{indexController.verificarUsuario()}"/>
-            
+
+            <p:commandButton value="Acceder" action="#{indexController.verificarUsuario()}"/>            
         </h:form>
     </h:body>
 </html>

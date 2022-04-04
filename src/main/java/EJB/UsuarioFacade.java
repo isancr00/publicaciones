@@ -42,7 +42,7 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 
         List<Usuario> resultado = query.getResultList();
         
-        if(resultado == null){
+        if(resultado.isEmpty()){
             return null;
         }else{
             return resultado.get(0);
