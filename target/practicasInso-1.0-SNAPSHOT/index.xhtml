@@ -8,11 +8,15 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:outputLabel value ="Introduzca el nombre de la categoría"/>
-            <p:inputText value="#{altaCategoriaController.cat.nombre}"/>
-            <p:commandButton value="Registrar" actionListener="#{altaCategoriaController.insertarCategoria()}"/> 
-            <p> </p>
-            <p:commandButton value="Acceder a formulario de alta" action="altaUsuario.xhtml"/>
+            <p:panelGrid columns="2" layout="grid">
+                <p:outputLabel value="Nombre de usuario"/>
+                <p:inputText value="#{indexController.usuario.user}"/>
+                
+                <p:outputLabel value="Password"/>
+                <p:password value="#{indexController.usuario.password}"/>                                 
+            </p:panelGrid>
+            <p:commandButton value="Acceder" actionListener="#{indexController.verificarUsuario()}" action="#{indexController.verificarUsuario()}"/>
+            
         </h:form>
     </h:body>
 </html>
