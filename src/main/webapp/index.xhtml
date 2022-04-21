@@ -16,8 +16,7 @@
                 <p:password value="#{indexController.usuario.password}"/>                                 
             </p:panelGrid>
 
-            <p:commandButton value="Acceder" action="#{indexController.verificarUsuario()}"/>            
+            <p:commandButton value="Acceder" ajax="false" action="#{indexController.verificarUsuario()}"/>            
         </h:form>
     </h:body>
 </html>
-

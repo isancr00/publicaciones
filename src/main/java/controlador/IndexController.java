@@ -9,6 +9,7 @@ import EJB.UsuarioFacadeLocal;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import modelo.Usuario;
@@ -31,10 +32,15 @@ public class IndexController implements Serializable{
     }
     
     public String verificarUsuario(){
-        if(usuarioEJB.verificarUsuario(usuario) == null){
-            return "permiossinsuficientes.xhtml";
+        Usuario usuario = usuarioEJB.verificarUsuario(this.usuario);
+        if(usuario == null){
+            System.out.println("Insuficiente");
+            return "noPermiso.xhtml";
         }else{
-            return "privado/inicio.xhtml";
+            System.out.println("Suficiente");
+            
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
+            return "privado/principal.xhtml";
         }
         
     }

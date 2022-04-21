@@ -32,8 +32,8 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
     }
     
     @Override
-    public Usuario verificarUsuario(Usuario us) {
-   
+    public Usuario verificarUsuario(Usuario us) { 
+        Usuario devuelve = null;
         String consulta = "FROM Usuario u WHERE u.user=:param1 and u.password=:param2";
         Query query = em.createQuery(consulta);
 
@@ -45,7 +45,8 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
         if(resultado.isEmpty()){
             return null;
         }else{
-            return resultado.get(0);
+            devuelve = resultado.get(0);
+            return devuelve;
         }        
     }
 

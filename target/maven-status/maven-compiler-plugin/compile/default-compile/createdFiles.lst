@@ -13,6 +13,7 @@ EJB\UsuarioFacadeLocal.class
 modelo\Rol.class
 EJB\MenuFacade.class
 EJB\MenuFacadeLocal.class
+controlador\PlantillaController.class
 EJB\RolFacadeLocal.class
 modelo\Categoria.class
 EJB\CategoriaFacade.class

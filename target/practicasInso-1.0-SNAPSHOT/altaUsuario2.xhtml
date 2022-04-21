@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/template/plantillaPublicaciones.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="content">
+                <h:outputScript library="js" name="calendarioSpanish.js"/>
+        <h1>UNIVERSIDAD DE LEÓN</h1>
+        <h:form>
+            <p:fieldset legend="Datos personales">
+                <p:panelGrid columns="3" layout="grid" styleClass="sjpwcase-text-align-center">
+                    <p:outputLabel value ="Nombre: "/>
+                    <p:inputText value="#{altaUsuarioController.persona.nombre}" required="true" 
+                        requiredMessage="Nombre es un campo obligatorio"
+                        id="txtNombre"/>
+                    <p:message for="txtNombre"/>                  
+                    
+                    <p:outputLabel value ="Primer apellido:  "/>
+                    <p:inputText value="#{altaUsuarioController.persona.apellido1}" required="true" 
+                        requiredMessage="Primer apellido es un campo obligatorio"
+                        id="txtPrimApe"/>
+                    <p:message for="txtPrimApe"/>   
+                    
+                    <p:outputLabel value ="Segundo apellido:  "/>
+                    <p:inputText value="#{altaUsuarioController.persona.apellido2}" required="true" 
+                        requiredMessage="Segundo apellido es un campo obligatorio"
+                        id="txtSegApe"/>
+                    <p:message for="txtSegApe"/> 
+                    
+                    <p:outputLabel value ="Sexo:  "/>
+                    <p:selectOneMenu id="sexo" value="#{altaUsuarioController.persona.sexo}"
+                                     required="true" requiredMessage="Sexo es un campo obligatorio">
+                        <f:selectItem itemLabel="Seleccione sexo" itemValue=""/>
+                        <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                        <f:selectItem itemLabel="Femenino" itemValue="F"/>
+                    </p:selectOneMenu>
+                    <p:message for="sexo"/>                   
+
+                    <p:outputLabel value ="Fecha de nacimiento:  "/>
+                    <p:calendar id="calendario" value="#{altaUsuarioController.persona.fecha}" showOn="button" required="true" 
+                                requiredMessage="Fecha de nacimiento es un campo obligatorio" locale="es"/>
+                    <p:message for="calendario"/>                   
+                </p:panelGrid>
+            </p:fieldset>
+            
+            <p> </p>
+            
+             <p:fieldset legend="Datos de acceso">
+                <p:panelGrid columns="3" layout="grid" styleClass="sjpwcase-text-align-center">
+                    
+                    <p:outputLabel value ="Rol: "/>
+                    <p:selectOneMenu id="rol" value="#{altaUsuarioController.nombreRol}">
+                        <f:selectItem itemLabel="Rol" itemValue=""/>
+                        <f:selectItem itemLabel="#{altaUsuarioController.roles.get(0).getDescripcion()}" itemValue="#{altaUsuarioController.roles.get(0).getDescripcion()}"/>
+                        <f:selectItem itemLabel="#{altaUsuarioController.roles.get(1).getDescripcion()}" itemValue="#{altaUsuarioController.roles.get(1).getDescripcion()}"/>
+                        <f:selectItem itemLabel="#{altaUsuarioController.roles.get(2).getDescripcion()}" itemValue="#{altaUsuarioController.roles.get(2).getDescripcion()}"/>
+                    </p:selectOneMenu>
+                    <p:message for="rol"/>                   
+
+                    
+                    <p:outputLabel value ="Nombre de usuario: "/>
+                    <p:inputText value="#{altaUsuarioController.usuario.user}" required="true" 
+                        requiredMessage="Nombre de usuario es un campo obligatorio"
+                        id="txtNombreUsuario"/>
+                    <p:message for="txtNombreUsuario"/>                  
+
+                    
+                    <p:outputLabel value ="Contrasesña:  "/>
+                    <p:password value="#{altaUsuarioController.usuario.password}" required="true" 
+                        requiredMessage="Contraseña es un campo obligatorio"
+                        id="txtcontra1"/>
+                    <p:message for="txtcontra1"/>      
+                 </p:panelGrid>
+             </p:fieldset>
+            
+            <p:commandButton value="Registrar" actionListener="#{altaUsuarioController.insertarUsuario()}" update="@form"/> 
+        </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
