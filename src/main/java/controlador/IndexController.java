@@ -32,14 +32,16 @@ public class IndexController implements Serializable{
     }
     
     public String verificarUsuario(){
-        Usuario usuario = usuarioEJB.verificarUsuario(this.usuario);
-        if(usuario == null){
+        Usuario usuarioB = null;
+        
+        usuarioB =  usuarioEJB.verificarUsuario(this.usuario);
+        if(usuarioB == null){
             System.out.println("Insuficiente");
             return "noPermiso.xhtml";
         }else{
             System.out.println("Suficiente");
             
-            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuarioB);
             return "privado/principal.xhtml";
         }
         
