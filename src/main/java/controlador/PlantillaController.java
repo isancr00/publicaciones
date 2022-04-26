@@ -25,4 +25,5 @@ public class PlantillaController implements Serializable{
            FacesContext.getCurrentInstance().getExternalContext().redirect("noPermiso.xhtml");
        }     
     }
+    
 }

@@ -19,6 +19,7 @@ modelo\Categoria.class
 EJB\CategoriaFacade.class
 EJB\UsuarioFacade.class
 controlador\IndexController.class
+controlador\MenuController.class
 com\mycompany\practicasinso\JAXRSConfiguration.class
 modelo\Persona.class
 modelo\Publicacion.class

@@ -8,15 +8,21 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:panelGrid columns="2" layout="grid">
-                <p:outputLabel value="Nombre de usuario"/>
-                <p:inputText value="#{indexController.usuario.user}"/>
-                
-                <p:outputLabel value="Password"/>
-                <p:password value="#{indexController.usuario.password}"/>                                 
-            </p:panelGrid>
+            <div align="center" style="position: fixed; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+                <p:panel header="Inicio de Sesión" style="width:500px">
+                <p:panelGrid columns="2" layout="grid">
+                    <p:outputLabel value="Nombre de usuario"/>
+                    <p:inputText value="#{indexController.usuario.user}"/>
 
-            <p:commandButton value="Acceder" ajax="false" action="#{indexController.verificarUsuario()}"/>            
+                    <p:outputLabel value="Password"/>
+                    <p:password value="#{indexController.usuario.password}"/>
+
+                    <p:outputLabel value=""/>
+                    <p:commandButton value="Acceder" ajax="false" action="#{indexController.verificarUsuario()}"/>            
+
+                </p:panelGrid>
+            </p:panel>
+            </div>
         </h:form>
     </h:body>
 </html>
