@@ -103,4 +103,70 @@ public class Publicacion {
         }
         return true;
     }
+
+    public int getIdPublicacion() {
+        return idPublicacion;
+    }
+
+    public void setIdPublicacion(int idPublicacion) {
+        this.idPublicacion = idPublicacion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getCuerpo() {
+        return cuerpo;
+    }
+
+    public void setCuerpo(String cuerpo) {
+        this.cuerpo = cuerpo;
+    }
+
+    public String getComentarioProfesor() {
+        return comentarioProfesor;
+    }
+
+    public void setComentarioProfesor(String comentarioProfesor) {
+        this.comentarioProfesor = comentarioProfesor;
+    }
+
+    public String getValoracion() {
+        return valoracion;
+    }
+
+    public void setValoracion(String valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
+    
 }

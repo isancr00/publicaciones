@@ -29,14 +29,13 @@ import org.primefaces.model.menu.MenuModel;
 @SessionScoped
 public class MenuController implements Serializable{
     
-    private MenuModel modelo;
-            
+    private MenuModel modelo;            
     @EJB
     private MenuFacadeLocal menuEJB;
     
      @PostConstruct
     public void init(){
-        modelo = new DefaultMenuModel();
+        modelo = new DefaultMenuModel(); 
         obtenerMenu();
     }
      
@@ -83,7 +82,12 @@ public class MenuController implements Serializable{
         for(int i= 0; i<submenusLista.size();i++){
             modelo.getElements().add(submenusLista.get(i));
         }
-                
+        
+    }
+    
+    public String destruirSesion(){  
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/index.xhtml?faces-redirect=true";
     }
 
     public MenuModel getModelo() {

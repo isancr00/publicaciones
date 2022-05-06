@@ -17,7 +17,8 @@
 
         <div id="top">
             <f:event type="preRenderView" listener="#{plantillaController.verificarYMostrar()}"/>
-            <p:menu model="#{menuController.modelo}" toggleable="true" style="horizontalMenu"/>                    
+            <p:menubar model="#{menuController.modelo}"/>
+            <p:commandButton value="Cerrar Sesión" action="#{menuController.destruirSesion()}"/>
         </div>
 
         <div id="content" class="center_content">

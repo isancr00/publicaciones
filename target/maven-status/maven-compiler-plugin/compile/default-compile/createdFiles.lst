@@ -23,4 +23,5 @@ controlador\MenuController.class
 com\mycompany\practicasinso\JAXRSConfiguration.class
 modelo\Persona.class
 modelo\Publicacion.class
+controlador\AltaPublicacionController.class
 modelo\Usuario.class

@@ -10,6 +10,7 @@ import java.io.Serializable;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
 import modelo.Usuario;
 
 /**
@@ -21,9 +22,17 @@ import modelo.Usuario;
 public class PlantillaController implements Serializable{
     public void verificarYMostrar() throws IOException{
        Usuario devuelve = (Usuario) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
-       if((devuelve == null) || (devuelve.getRol().getIdRol() != 3)){
-           FacesContext.getCurrentInstance().getExternalContext().redirect("noPermiso.xhtml");
-       }     
+       
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        String url = request.getRequestURL().toString();
+        
+        if(!url.contains("index")){
+            if((devuelve == null) || !url.contains(devuelve.getUser())){
+                FacesContext.getCurrentInstance().getExternalContext().redirect("noPermiso.xhtml");
+
+            }
+        }
+    
     }
     
 }
