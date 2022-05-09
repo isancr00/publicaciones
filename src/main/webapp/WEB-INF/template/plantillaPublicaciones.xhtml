@@ -16,9 +16,12 @@
     <h:body>
 
         <div id="top">
-            <f:event type="preRenderView" listener="#{plantillaController.verificarYMostrar()}"/>
-            <p:menubar model="#{menuController.modelo}"/>
-            <p:commandButton value="Cerrar Sesión" action="#{menuController.destruirSesion()}"/>
+            <h:form>
+                
+                <f:event type="preRenderView" listener="#{plantillaController.verificarYMostrar()}"/>
+                <p:menubar model="#{menuController.modelo}"/>
+                <p:commandButton value="Cerrar Sesión" action="#{menuController.destruirSesion()}"/>
+            </h:form>
         </div>
 
         <div id="content" class="center_content">

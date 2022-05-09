@@ -9,8 +9,8 @@ import EJB.UsuarioFacadeLocal;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import modelo.Usuario;
 
@@ -19,7 +19,7 @@ import modelo.Usuario;
  * @author sanch
  */
 @Named
-@ViewScoped
+@SessionScoped
 public class IndexController implements Serializable{
     private Usuario usuario;
     

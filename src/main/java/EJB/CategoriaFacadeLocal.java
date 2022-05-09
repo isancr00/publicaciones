@@ -23,6 +23,8 @@ public interface CategoriaFacadeLocal {
     void remove(Categoria categoria);
 
     Categoria find(Object id);
+    Categoria find(String nombre);
+
 
     List<Categoria> findAll();
 

@@ -58,7 +58,7 @@ public class AltaUsuarioController implements Serializable{
         this.roles = roles;
     }
 
-         public void insertarUsuario(){
+    public void insertarUsuario(){
         try{
             usuario.setRol(rolEJB.find(nombreRol));
             usuario.setPersona(persona);
